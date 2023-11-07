@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock by juwel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+
+    <script>
+        const hours = document.getElementById('hrs')
+        const min = document.getElementById('min')
+        const sec = document.getElementById('sec')
+
+        
+        
+        setInterval(()=>{
+            let localTime = new Date();
+
+            hours.innerHTML = (localTime.getHours()<10?'0':'' )+localTime.getHours();
+            min.innerHTML = (localTime.getMinutes()<10?'0':'' )+localTime.getMinutes();
+            sec.innerHTML = (localTime.getSeconds()<10?'0':'' )+localTime.getSeconds();
+        }, 1000)
+        
+    </script>
+
+</body>
+</html>
